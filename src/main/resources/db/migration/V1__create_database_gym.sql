@@ -1,0 +1,26 @@
+CREATE TABLE aluno (
+matricula INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100),
+email VARCHAR(100),
+nascimento VARCHAR (100),
+senha VARCHAR(255),
+permicao VARCHAR (255)
+);
+
+CREATE TABLE agenda (
+id INT AUTO_INCREMENT PRIMARY KEY,
+id_aluno INT NOT NULL,
+data VARCHAR(10),
+entrada VARCHAR(15),
+saida VARCHAR (15)
+);
+
+ALTER TABLE agenda ADD CONSTRAINT FOREIGN KEY (id_aluno) REFERENCES aluno (matricula);
+
+CREATE TABLE event (
+id INT AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR (50),
+start VARCHAR(20),
+fim VARCHAR (20)
+);
+
